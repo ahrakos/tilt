@@ -1,0 +1,22 @@
+{
+    "image": "mcr.microsoft.com/vscode/devcontainers/base:ubuntu",
+    "appPort": [4000, 30007, 30008],
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "18"
+        },
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+        "ghcr.io/devcontainers/features/python:1": {}
+    },
+    "forwardPorts": [],
+    "hostRequirements": {
+        "cpus": 4
+    },
+    "runArgs": [
+        "--add-host=host.docker.internal:host-gateway",
+        "--add-host=redis:127.0.0.1"
+    ],
+    "postCreateCommand": ".devcontainer/pre-build.sh",
+    "workspaceMount": "source=${localWorkspaceFolder},target=/home/opti-k8s-scheduler,type=bind",
+    "workspaceFolder": "/home/opti-k8s-scheduler"
+}

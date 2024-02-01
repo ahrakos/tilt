@@ -1,0 +1,4 @@
+{
+    "root": true,
+    "extends": ["@optibus/eslint-config-ts"]
+}
