@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: autoscaler-role-binding
+  namespace: default  # Same namespace as above
+subjects:
+- kind: ServiceAccount
+  name: autoscaler-service-account
+  namespace: default  # Same namespace as above
+roleRef:
+  kind: Role
+  name: autoscaler-role
+  apiGroup: rbac.authorization.k8s.io

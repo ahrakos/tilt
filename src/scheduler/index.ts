@@ -1,6 +1,8 @@
 import dns from "dns/promises";
 import { createClient } from "redis";
 
+// const MAX_ROOM_CAPACITY = 2;
+
 const main = async () => {
   console.log("hi");
   console.log("Hello World");
@@ -19,8 +21,8 @@ const main = async () => {
 
   const address = await client.get(result.address);
   console.log({ address });
-  if (!address) {
-    await client.set(result.address, 1);
+  if (address === null) {
+    await client.set(result.address, 0);
   }
 };
 

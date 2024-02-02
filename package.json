@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "nodemon --exec ts-node ./src/index.ts",
+    "watch-scheduler": "nodemon --exec ts-node ./src/scheduler/index.ts",
+    "watch-autoscaler": "nodemon --exec ts-node ./src/scaler/index.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -19,6 +20,7 @@
     "typescript": "^5.3.3"
   },
   "dependencies": {
+    "@kubernetes/client-node": "^0.20.0",
     "redis": "^4.6.12"
   }
 }

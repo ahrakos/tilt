@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: euclid
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: euclid
+  template:
+    metadata:
+      labels:
+        app: euclid
+    spec:
+      containers:
+      - name: euclid
+        image: ubuntu
+        command: ["/bin/bash", "-c", "--"]
+        args: ["while true; do sleep 30; done;"]

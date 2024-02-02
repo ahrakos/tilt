@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: opti-k8s-autoscaler
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: opti-k8s-autoscaler
+  template:
+    metadata:
+      labels:
+        app: opti-k8s-autoscaler
+    spec:
+      serviceAccountName: autoscaler-service-account
+      containers:
+      - name: opti-k8s-autoscaler
+        image: opti-k8s-autoscaler:latest  # Replace with your image name and tag
+        ports:
+        - containerPort: 4001

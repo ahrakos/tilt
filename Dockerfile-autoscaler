@@ -13,8 +13,5 @@ RUN npm ci
 # Copy the current directory contents into the container at /usr/src/app
 COPY . .
 
-# Expose the port the app runs on
-EXPOSE 4000
-
 # Command to run the app using nodemon
-CMD ["npm", "run", "watch"]
+CMD ["npm", "run", "watch-autoscaler"]

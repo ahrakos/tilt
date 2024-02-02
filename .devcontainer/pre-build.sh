@@ -30,7 +30,6 @@ curl -fsSL https://raw.githubusercontent.com/tilt-dev/tilt/master/scripts/instal
 # Patch CoreDNS to have host.docker.internal inside the cluster available
 kubectl get cm coredns -n kube-system -o yaml | sed "s/  NodeHosts: |/  NodeHosts: |\n    `grep host.docker.internal /etc/hosts`/" | kubectl apply -f -
 
-
 # ZSHRC
 sudo echo 'alias l="ls -lah"' >> /home/vscode/.zshrc
 sudo echo 'alias k=kubectl' >> /home/vscode/.zshrc
